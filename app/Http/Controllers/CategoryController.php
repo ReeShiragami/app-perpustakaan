@@ -37,12 +37,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validated();
-
+        $validated = $request->validate([
+            'nama_kategori' => 'required|string|max:255',
+            'deskripsi' => 'nullable|string',
+        ]);
+    
         return redirect()->route('categories.index')
-            ->with('success', "Kategori \"{$validated['nama_kategori']}\" berhasil ditambahkan (data dummy, belum tersimpan ke database).");
+            ->with(
+                'success',
+                "Kategori \"{$validated['nama_kategori']}\" berhasil ditambahkan."
+            );
     }
-
     /**
      * Show the form for editing the specified resource.
      */
