@@ -1,46 +1,39 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Daftar Member</title>
-</head>
-<body>
+{{-- File: resources/views/members/index.blade.php --}}
+@extends('layouts.app')
 
-    <h1>Daftar Member</h1>
+@section('title', 'Daftar Anggota')
 
-    @if(session('success'))
-        <p style="color: green;">
-            {{ session('success') }}
-        </p>
-    @endif
+@section('content')
+    <h1>Daftar Anggota</h1>
 
-    <p>
-        <a href="{{ route('members.create') }}">
-            Tambah Member
-        </a>
-    </p>
-
-    <table border="1" cellpadding="8">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nama</th>
+                <th>NIM</th>
                 <th>Email</th>
-                <th>Telepon</th>
+                <th>No. Telepon</th>
+                <th>Status</th>
             </tr>
         </thead>
-
         <tbody>
-            @foreach ($members as $member)
+            @forelse ($members as $member)
                 <tr>
                     <td>{{ $member['id'] }}</td>
                     <td>{{ $member['nama'] }}</td>
+                    <td>{{ $member['nim'] }}</td>
                     <td>{{ $member['email'] }}</td>
-                    <td>{{ $member['telepon'] }}</td>
+                    <td>{{ $member['nomor_telepon'] }}</td>
+                    <td>{{ ucfirst($member['status']) }}</td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="6">Belum ada data anggota.</td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
 
-</body>
-</html>
+    <p><em>Catatan: data di atas masih data dummy (array statis di Controller). Form tambah/edit anggota dan CRUD lengkap anggota baru dibuat mulai Pertemuan 5.</em></p>
+@endsection
