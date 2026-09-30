@@ -43,6 +43,34 @@
         </tr>
     </table>
 
+    <h2>Riwayat Peminjaman</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tanggal Pinjam</th>
+                <th>Tanggal Kembali</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @forelse ($member->loans as $loan)
+                <tr>
+                    <td>{{ $loan->id }}</td>
+                    <td>{{ $loan->tanggal_pinjam }}</td>
+                    <td>{{ $loan->tanggal_kembali }}</td>
+                    <td>{{ $loan->status }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="4">Belum ada riwayat peminjaman.</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+
     <p>
         <a href="{{ route('members.index') }}">
             Kembali

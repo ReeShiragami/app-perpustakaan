@@ -42,7 +42,7 @@
         </tr>
         <tr>
             <th>Kategori</th>
-            <td>{{ $book['category_id'] }}</td>
+            <td>{{ $book->category->nama_kategori }}</td>
         </tr>
     </table>
 </body>

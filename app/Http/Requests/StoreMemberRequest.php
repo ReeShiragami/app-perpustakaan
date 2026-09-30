@@ -1,3 +1,4 @@
+// File: app/Http/Requests/StoreMemberRequest.php
 <?php
 
 namespace App\Http\Requests;
@@ -7,17 +8,12 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreMemberRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool 
+    public function authorize(): bool
     {
         return true;
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
@@ -31,20 +27,20 @@ class StoreMemberRequest extends FormRequest
             'status' => 'required|in:aktif,nonaktif',
         ];
     }
-        
-        public function messages(): array //untuk ditambahkan pesan kustom 
+
+    public function messages(): array
     {
         return [
-            'nama.required' => 'Nama wajib diisi.',
+            'nama.required' => 'Nama anggota wajib diisi.',
             'nim.required' => 'NIM wajib diisi.',
-            'nim.unique' => 'NIM sudah digunakan.',
+            'nim.unique' => 'NIM sudah terdaftar.',
             'email.required' => 'Email wajib diisi.',
             'email.email' => 'Format email tidak valid.',
-            'email.unique' => 'Email sudah digunakan.',
+            'email.unique' => 'Email sudah terdaftar.',
             'nomor_telepon.required' => 'Nomor telepon wajib diisi.',
             'alamat.required' => 'Alamat wajib diisi.',
             'status.required' => 'Status wajib dipilih.',
-            'status.in' => 'Status harus aktif atau nonaktif.',
+            'status.in' => 'Status tidak valid.',
         ];
     }
 }
