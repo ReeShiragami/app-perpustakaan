@@ -22,22 +22,7 @@
             @endforeach
         </select>
     </div>
-
     <br>
-
-    <div>
-        <label for="user_id">Petugas</label>
-        <select name="user_id" id="user_id" required>
-            @foreach (\App\Models\User::all() as $user)
-                <option value="{{ $user->id }}">
-                    {{ $user->name }}
-                </option>
-            @endforeach
-        </select>
-    </div>
-
-    <br>
-
     <div>
         <label for="tanggal_pinjam">Tanggal Pinjam</label>
         <input

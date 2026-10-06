@@ -23,6 +23,9 @@
         .btn { display: inline-block; padding: 6px 14px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; }
         form.inline { display: inline; }
         footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb; margin-top: 40px; }
+        .navbar-user {margin-left: 15px;font-weight: 600;}
+
+        .btn-logout { margin-left: 10px; padding: 6px 12px;border: none; border-radius: 4px; cursor: pointer;}
     </style>
 </head>
 <body>
