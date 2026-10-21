@@ -1,0 +1,23 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/loans
+url: http://127.0.0.1:8000/api/loans
+method: POST
+headers:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \  \"member_id\": 1,\r
+
+    \  \"user_id\": 3,\r
+
+    \  \"tanggal_pinjam\": \"2026-10-21\",\r
+
+    \  \"tanggal_kembali\": \"2026-10-28\",\r
+
+    \  \"book_ids\": [1]\r
+
+    }"
+order: 13000

@@ -1,0 +1,7 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/loans
+url: http://127.0.0.1:8000/api/loans
+method: GET
+headers:
+  Accept: application/json
+order: 8000

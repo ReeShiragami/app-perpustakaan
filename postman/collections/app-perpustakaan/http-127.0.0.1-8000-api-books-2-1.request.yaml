@@ -1,0 +1,18 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/books/2
+url: http://127.0.0.1:8000/api/books/2
+method: PUT
+headers:
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+        "judul": "Buku Baru",
+        "penulis": "Penulis Baru",
+        "penerbit": "Penerbit Baru",
+        "tahun_terbit": 2023,
+        "stok": 10,
+        "category_id": 1
+    }
+order: 5000

@@ -1,0 +1,7 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/books/2
+url: http://127.0.0.1:8000/api/books/2
+method: DELETE
+headers:
+  Accept: application/json
+order: 11000

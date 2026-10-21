@@ -1,0 +1,11 @@
+$kind: http-request
+name: 'http://127.0.0.1:8000/api/books?judul=Dasar'
+url: 'http://127.0.0.1:8000/api/books?judul=Dasar'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+queryParams:
+  - key: judul
+    value: Dasar
+order: 2000

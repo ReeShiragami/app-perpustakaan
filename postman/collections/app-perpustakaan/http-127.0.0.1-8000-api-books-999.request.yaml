@@ -1,0 +1,7 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/books/999
+url: http://127.0.0.1:8000/api/books/999
+method: GET
+headers:
+  "": application/json
+order: 6000

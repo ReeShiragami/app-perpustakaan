@@ -1,0 +1,7 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/members
+url: http://127.0.0.1:8000/api/members
+method: GET
+headers:
+  Accept: application/json
+order: 9000

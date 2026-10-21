@@ -1,0 +1,9 @@
+$kind: http-request
+name: http://127.0.0.1:8000/books?category_id=2
+url: http://127.0.0.1:8000/api/books?category_id=2
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  category_id: "2"
+order: 3000
