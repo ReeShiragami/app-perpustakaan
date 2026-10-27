@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Loan;
 use App\Models\Member;
 use App\Models\Book;
-
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\ConnectionException;
 
 class LoanController extends Controller
 {
@@ -24,6 +25,25 @@ class LoanController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function report()
+    {
+        $loans = [];
+        try {
+            $response = Http::get(
+                config('services.internal_api.base_url') . '/api/loans'
+            );
+
+            if ($response->successful()) {
+                $loans = $response->json('data') ?? [];
+            }
+        } catch (ConnectionException $e) {
+            // API tidak dapat dihubungi.
+            // Laporan tetap ditampilkan dalam keadaan kosong.
+        }
+
+        return view('loans.report', compact('loans'));
+    }
+
     public function create()
     {
         $members = Member::all();

@@ -12,11 +12,18 @@ Route::get('/test', function () {
     ]);
 });
 Route::get('/stats', [StatsController::class, 'index']);
-Route::apiResource('/books', BookController::class);
-Route::apiResource('/members', MemberController::class)->only(['index', 'show']);
-Route::apiResource('/loans', LoanController::class)
-    ->only(['index', 'store', 'show']);
-Route::put(
-    '/loans/{id}/kembalikan',
-    [LoanController::class, 'kembalikan']
-);
+
+Route::name('api.')->group(function () {
+    Route::apiResource('/books', BookController::class);
+
+    Route::apiResource('/members', MemberController::class)
+        ->only(['index', 'show']);
+
+    Route::apiResource('/loans', LoanController::class)
+        ->only(['index', 'store', 'show']);
+
+    Route::put(
+        '/loans/{id}/kembalikan',
+        [LoanController::class, 'kembalikan']
+    );
+});

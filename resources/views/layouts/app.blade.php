@@ -26,6 +26,34 @@
         .navbar-user {margin-left: 15px;font-weight: 600;}
 
         .btn-logout { margin-left: 10px; padding: 6px 12px;border: none; border-radius: 4px; cursor: pointer;}
+        .stats-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin: 24px 0;
+    }
+    .stat-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+        background: #f8fafc;
+    }
+    .stat-card h3 {
+        margin-top: 0;
+        font-size: 15px;
+        color: #475569;
+    }
+    .stat-card p {
+        margin-bottom: 0;
+        font-size: 30px;
+        font-weight: bold;
+        color: #1e3a8a;
+    }
+    @media (max-width: 600px) {
+        .stats-container {
+            grid-template-columns: 1fr;
+        }
+    }
     </style>
 </head>
 <body>
