@@ -54,6 +54,32 @@
             grid-template-columns: 1fr;
         }
     }
+    
+    .pagination {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pagination a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .pagination a:hover {
+        text-decoration: underline;
+    }
+
+    .pagination .pagination-current {
+        font-weight: bold;
+        color: #1e3a8a;
+    }
+
+    .pagination .pagination-disabled {
+        color: #9ca3af;
+    }
+
     </style>
 </head>
 <body>
